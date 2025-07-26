@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.canvas.Canvas?>
+
+<BorderPane style="-fx-background-color: #2b2b2b;" stylesheets="@../../styles/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mediatracker.MainViewController">
+    <top>
+        <VBox>
+            <!-- Top panel for drag and drop and buttons -->
+            <HBox fx:id="topBar" alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: #3c3f41; -fx-padding: 5;">
+                <Button onAction="#returnToMain" styleClass="top-button" text="Главная" />
+                <Button onAction="#showFavoritesView" styleClass="top-button" text="Избранное" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="minimizeButton" styleClass="window-button" text="_" />
+                <Button fx:id="closeButton" styleClass="window-button-close" text="X" />
+            </HBox>
+
+            <!-- Panel with folders -->
+            <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 10; -fx-background-color: #383838;">
+                <Label text="Папки:" textFill="white">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <ListView fx:id="folderListView" orientation="HORIZONTAL" prefHeight="40" style="-fx-background-color: #383838; -fx-focus-traversable: false;" HBox.hgrow="ALWAYS" />
+            </HBox>
+
+        </VBox>
+    </top>
+    <center>
+        <StackPane fx:id="centerStackPane" style="-fx-background-color: #2b2b2b;" alignment="TOP_CENTER">
+            <children>
+                <!-- Purple grid lines (under everything else) -->
+                <Canvas fx:id="gridCanvas" mouseTransparent="true" StackPane.alignment="TOP_LEFT" />
+                <!-- Container for dynamically loaded views -->
+                <VBox fx:id="mainContent" alignment="TOP_CENTER" />
+
+                <!-- Main menu buttons -->
+                <VBox fx:id="mainActionButtons" alignment="CENTER" spacing="20" visible="false" managed="false" StackPane.alignment="CENTER">
+                    <HBox alignment="CENTER" spacing="20">
+                        <Button onAction="#handleLogout" styleClass="action-button, logout-button" text="Выйти из аккаунта" />
+                        <Button fx:id="deleteFolderButton" onAction="#handleDeleteFolder" styleClass="action-button, delete-folder-button" text="Удалить папку" />
+                    </HBox>
+                    <HBox alignment="CENTER" spacing="20">
+                        <Button onAction="#handleAddFolder" styleClass="action-button" text="Создать папку" />
+                        <Button onAction="#handleLoadDatapack" styleClass="action-button" text="Загрузить датапак приложения" />
+                        <Button onAction="#handleCreateDatapack" styleClass="action-button" text="Создать датапак" />
+                    </HBox>
+                </VBox>
+            </children>
+        </StackPane>
+    </center>
+</BorderPane>

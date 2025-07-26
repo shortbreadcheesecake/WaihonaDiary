@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox spacing="15" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mediatracker.ConfirmationDialogController">
+    <Label fx:id="headerLabel" text="Заголовок" style="-fx-font-size: 18px; -fx-text-fill: white;"/>
+    <Label fx:id="contentLabel" text="Текст сообщения" style="-fx-text-fill: #cccccc; -fx-wrap-text: true;"/>
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="okButton" text="Да" onAction="#handleOk" styleClass="dialog-button-danger"/>
+        <Button fx:id="cancelButton" text="Отмена" onAction="#handleCancel" styleClass="dialog-button-cancel"/>
+    </HBox>
+</VBox>

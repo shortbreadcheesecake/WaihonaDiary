@@ -1,0 +1,273 @@
+/* Подключение шрифтов */
+@font-face {
+    font-family: 'DoDavidGothicRegular';
+    src: url('../fonts/DoDavidGothicRegular-7BEz4.ttf') format('truetype');
+}
+
+.window-button {
+    -fx-background-color: transparent;
+    background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    font-size: 14px;
+}
+
+.window-button-close {
+    -fx-background-color: transparent;
+    background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    font-size: 14px;
+}
+
+.window-button:hover {
+    -fx-background-color: #6e6e6e;
+    background-color: #6e6e6e;
+}
+
+.window-button-close:hover {
+    -fx-background-color: #e81123;
+    background-color: #e81123;
+}
+
+.login-button {
+    -fx-background-color: #1e90ff;
+    background-color: #1e90ff;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    font-weight: bold;
+    -fx-padding: 10 20;
+    padding: 10px 20px;
+    -fx-background-radius: 5;
+    border-radius: 5px;
+}
+
+.login-button:hover {
+    -fx-background-color: #1c86ee;
+    background-color: #1c86ee;
+}
+
+.google-button {
+    -fx-background-color: #db4437;
+    background-color: #db4437;
+    -fx-text-fill: white;
+    -fx-padding: 10 20;
+    padding: 10px 20px;
+    -fx-background-radius: 5;
+    border-radius: 5px;
+}
+
+.google-button:hover {
+    -fx-background-color: #d04033;
+    background-color: #d04033;
+}
+
+.top-button {
+    -fx-background-color: #383838;
+    background-color: #383838;
+    -fx-text-fill: white;
+    -fx-border-color: white;
+    border-color: white;
+    -fx-border-width: 1;
+    border-width: 1px;
+    -fx-border-radius: 3;
+    border-radius: 3px;
+}
+
+.top-button:hover {
+    -fx-background-color: #4a4a4a;
+    background-color: #4a4a4a;
+}
+
+.action-button {
+    -fx-background-color: white;
+    background-color: white;
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    font-size: 14px; /* Lint Fix */
+    -fx-padding: 10 20;
+    padding: 10 20; /* Lint Fix */
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    border-radius: 5px; /* Lint Fix */
+    -fx-cursor: hand;
+    cursor: hand; /* Lint Fix */
+}
+
+.action-button:hover {
+    -fx-background-color: #f0f0f0;
+    background-color: #f0f0f0;
+}
+
+/* Styles for TableView */
+.table-view .column-header-background {
+    -fx-background-color: #383838;
+    background-color: #383838;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+    background-color: transparent;
+    -fx-border-color: #444;
+    border-color: #545454;
+    -fx-border-width: 0 1px 1px 0;
+    border-width: 0 1px 1px 0;
+}
+
+.dialog-button-ok {
+    -fx-background-color: #007bff;
+    background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    font-size: 14px;
+    -fx-padding: 8px 16px;
+    padding: 8px 16px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    border-radius: 5px;
+    -fx-cursor: hand;
+    cursor: pointer;
+}
+
+.dialog-button-ok:hover {
+    -fx-background-color: #0056b3;
+    background-color: #0056b3;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+}
+
+/* Decorative stripes */
+.decorative-stripe {
+    -fx-background-color: #d3d3d3;
+    background-color: #d3d3d3;
+    -fx-alignment: center-left;
+    -fx-padding: 0;
+    padding: 0;
+}
+
+.stripe-text {
+    -fx-text-fill: #8a2be2;
+    -fx-font-family: "DoDavidGothicRegular", "Arial", sans-serif;
+    font-family: "DoDavidGothicRegular", "Arial", sans-serif;
+    -fx-font-size: 16px;
+    font-size: 16px;
+    -fx-font-weight: normal;
+    font-weight: normal;
+    -fx-wrap-text: false;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: white;
+    -fx-border-color: transparent;
+    border-color: transparent;
+}
+
+.table-row-cell {
+    -fx-background-color: #545454;
+    background-color: #545454;
+}
+
+.table-row-cell:odd{
+    -fx-background-color: #5a5a5a;
+    background-color: #5a5a5a;
+}
+
+/* Style ONLY for the selected folder in the list */
+#folderListView .list-cell:filled:selected {
+    -fx-background-color: #efc2ff;
+}
+
+/* Text color for selected folder */
+#folderListView .list-cell:filled:selected .text {
+    -fx-fill: black;
+}
+
+.arrow-button {
+    -fx-background-color: transparent;
+    background-color: transparent; /* Lint Fix */
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    font-size: 16px; /* Lint Fix */
+    -fx-padding: 5 10;
+    padding: 5 10; /* Lint Fix */
+    -fx-background-radius: 3;
+    -fx-border-color: transparent;
+    border-color: transparent; /* Lint Fix */
+}
+
+.arrow-button:hover {
+    -fx-background-color: #5a5a5a;
+}
+
+.details-header {
+    -fx-font-weight: bold;
+    -fx-fill: #E0E0E0;
+    -fx-font-size: 16px;
+}
+
+.details-value {
+    -fx-fill: #E0E0E0;
+    -fx-font-size: 16px;
+}
+
+.arrow-button:disabled {
+    -fx-text-fill: gray;
+    -fx-background-color: transparent;
+    background-color: transparent; /* Lint Fix */
+}
+
+.arrow-button:disabled:hover {
+    -fx-background-color: transparent;
+    background-color: transparent; /* Lint Fix */
+}
+
+/* Logout button - purple */
+.logout-button {
+    -fx-background-color: #8A2BE2;
+    background-color: #8A2BE2; /* Lint Fix */
+    -fx-text-fill: white;
+}
+
+.logout-button:hover {
+    -fx-background-color: #9932CC;
+    background-color: #9932CC; /* Lint Fix */
+}
+
+.logout-button:pressed {
+    -fx-background-color: #7B68EE;
+    background-color: #7B68EE; /* Lint Fix */
+}
+
+/* The delete folder button is bright purple */
+.delete-folder-button {
+    -fx-background-color: #DA70D6;
+    background-color: #DA70D6; /* Lint Fix */
+    -fx-text-fill: white;
+}
+
+.delete-folder-button:hover {
+    -fx-background-color: #EE82EE;
+    background-color: #EE82EE; /* Lint Fix */
+}
+
+.delete-folder-button:pressed {
+    -fx-background-color: #DDA0DD;
+    background-color: #DDA0DD; /* Lint Fix */
+}
+
+.favorite-button {
+    -fx-background-color: transparent;
+    background-color: transparent; /* Lint Fix */
+    -fx-text-fill: red;
+    -fx-font-size: 20px;
+    font-size: 20px; /* Lint Fix */
+    -fx-padding: 0;
+    padding: 0; /* Lint Fix */
+}
+
+.favorite-button:hover {
+    -fx-background-color: #4a4a4a;
+    background-color: #4a4a4a; /* Lint Fix */
+}

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="rootPane" alignment="TOP_CENTER" prefHeight="600.0" prefWidth="800.0" spacing="10.0" style="-fx-background-color: #2B2B2B;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mediatracker.AddItemViewController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <HBox alignment="CENTER" spacing="10.0">
+        <Button fx:id="cancelButton" onAction="#handleCancel" text="Отмена" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Label fx:id="viewTitle" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;" text="Добавить новую запись" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Button fx:id="saveButton" onAction="#handleSave" text="Сохранить" />
+    </HBox>
+
+    <Separator prefWidth="200.0" />
+
+    <GridPane hgap="20.0" vgap="10.0" VBox.vgrow="ALWAYS">
+        <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="250.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints vgrow="ALWAYS" />
+        </rowConstraints>
+
+        <!-- Left Panel: Image -->
+        <VBox spacing="10" alignment="TOP_CENTER">
+            <TextField fx:id="titleField" promptText="Название" style="-fx-font-size: 18px;" />
+            <StackPane fx:id="imagePane" onMouseClicked="#handleImageClick" style="-fx-border-color: #555; -fx-border-width: 2; -fx-background-color: #3C3F41;" VBox.vgrow="ALWAYS">
+                <ImageView fx:id="imageView" fitHeight="340.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true" />
+                <Label fx:id="imagePlaceholderLabel" text="Нажмите или перетащите, чтобы загрузить обложку" style="-fx-text-fill: #CCCCCC;" />
+            </StackPane>
+        </VBox>
+
+        <!-- Right Panel: Details -->
+        <VBox spacing="15.0" GridPane.columnIndex="1">
+            <HBox fx:id="ratingBox" alignment="CENTER_LEFT" spacing="5.0">
+                <Label text="Оценка:" style="-fx-text-fill: white; -fx-font-size: 14px;" />
+                <!-- Stars will be added programmatically -->
+            </HBox>
+
+            <GridPane hgap="10" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="120.0" />
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+                </columnConstraints>
+
+                <Label text="Тип:" style="-fx-text-fill: #E0E0E0;" GridPane.rowIndex="0" />
+                <ComboBox fx:id="typeComboBox" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                <Label text="Статус:" style="-fx-text-fill: #E0E0E0;" GridPane.rowIndex="1" />
+                <ComboBox fx:id="statusComboBox" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label text="Дата выхода:" style="-fx-text-fill: #E0E0E0;" GridPane.rowIndex="2" />
+                <DatePicker fx:id="releaseDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <Label text="Жанр:" style="-fx-text-fill: #E0E0E0;" GridPane.rowIndex="3" />
+                <TextField fx:id="genreField" promptText="Например: боевик, комедия" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                <!-- Dynamic fields will be injected here by the controller -->
+                <VBox fx:id="dynamicFieldsPane" spacing="10" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+
+            </GridPane>
+
+            <Label text="Описание:" style="-fx-text-fill: #E0E0E0;" />
+            <TextArea fx:id="descriptionArea" prefHeight="100.0" wrapText="true" VBox.vgrow="ALWAYS" />
+        </VBox>
+    </GridPane>
+</VBox>
